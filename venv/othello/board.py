@@ -15,7 +15,7 @@ canvas.pack(expand=tkr.YES, fill=tkr.BOTH)
 #     tile.pack()
 
 
-class tile:
+class Tile:
     def __init__(self, coordinate, is_black):
         self.coordinate = coordinate
         self.is_black = is_black
@@ -51,15 +51,16 @@ board_width = ('1', '2', '3', '4', '5', '6', '7', '8')
 
 
 
-board_matrix_assignments = {}  # a1 - h8 assigned to 0-63
+board_matrix_assignments = {}  # a1 - h8 to be assigned to tile objects
 index = 0
 for letter in board_height:
     for number in board_width:
 
-        board_matrix_assignments[letter+number] = f'{board_matrix2[int(index)]}'
+        board_matrix_assignments[board_matrix2[index]] = Tile(f'{letter+number}', False) #f'{board_matrix2[int(index)]}'
         index +=1
 
 
+print(board_matrix_assignments['1'].coordinate)
 
 x1 = 10
 x2 = 20
