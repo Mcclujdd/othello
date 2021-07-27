@@ -60,7 +60,7 @@ for letter in board_height:
         index +=1
 
 
-print(board_matrix_assignments['1'].coordinate)
+print(board_matrix_assignments['1'].coordinate) # testing
 
 x1 = 10
 x2 = 20
