@@ -1,5 +1,5 @@
 from othello import board
-#Hello Jason
+#Hello Jason!
 
 #initialize players
 
