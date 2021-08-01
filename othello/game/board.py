@@ -15,7 +15,7 @@ class Tile:
     def __init__(self, coordinate, is_black):
         self.coordinate = coordinate
         self.is_black = is_black
-        self.tk_coordinates = [10, 20, 10, 20] #pixel coordinates for x1, y1, x2, y2
+        self.tkr_coordinates = [10, 20, 10, 20] #pixel coordinates for x1, y1, x2, y2
 
     def draw_tile(self):
         pass
