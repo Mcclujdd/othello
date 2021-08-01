@@ -5,7 +5,7 @@ master.geometry("800x800")
 frame = tkr.Frame(master)
 frame.pack()
 
-canvas = tkr.Canvas(master, width=720, height=720)
+canvas = tkr.Canvas(master, width=800, height=800)
 canvas.pack(expand=tkr.YES, fill=tkr.BOTH)
 
 
@@ -15,7 +15,7 @@ class Tile:
     def __init__(self, coordinate, is_black):
         self.coordinate = coordinate
         self.is_black = is_black
-        self.tkr_coordinates = [10, 20, 10, 20] #pixel coordinates for x1, y1, x2, y2
+        self.tkr_coordinates = [40, 130, 40, 130] #pixel coordinates for x1, y1, x2, y2
 
     def draw_tile(self):
         pass
@@ -56,12 +56,14 @@ def generateBoardValues():
 
 
 def drawBoard():
-    x1 = 10
-    x2 = 20
-    y1 = 10
-    y2 = 20
+    board = generateBoardValues()
 
-    for row in board_matrix:
+    x1 = 40
+    x2 = 130
+    y1 = 40
+    y2 = 130
+
+    for tile in board:
         x1 = 10
         x2 = 20
         for col in row:
