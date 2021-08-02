@@ -1,3 +1,6 @@
-from othello.game.board import drawBoard
+from othello.game.board import drawBoard, generateBoardValues
 
-drawBoard()
+board = generateBoardValues()
+
+drawBoard(board)
+
