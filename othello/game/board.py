@@ -65,9 +65,18 @@ def generateBoardValues():
 
     return board_matrix_assignments
 
-
-def modify_color(tile, color):
+def modifyColor(tile, color):
     canvas.itemconfig(tile, fill=color)
+
+
+def onClick(event):
+    tile = canvas.find_closest(event.x, event.y)
+
+    current_color = canvas.itemcget(tile, 'fill')
+
+    if current_color == 'grey' or 'blue':
+        modify_color(tile, 'red')
+
 
 def drawBoard(board):
 
