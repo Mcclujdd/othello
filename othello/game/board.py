@@ -14,7 +14,7 @@ class Tile:
 
     def __init__(self, coordinate, is_black, tkr_coordinates):
         self.coordinate = coordinate
-        self.is_black = is_black
+        self.color = 'grey'
         self.tkr_coordinates = tkr_coordinates
         # self.tkr_coordinates = [40, 40, 130, 130] #pixel coordinates for x1, y1, x2, y2
 
@@ -66,8 +66,10 @@ def generateBoardValues():
     return board_matrix_assignments
 
 
-def drawBoard():
-    board = generateBoardValues()
+def modify_color(tile, color):
+    canvas.itemconfig(tile, fill=color)
+
+def drawBoard(board):
 
     for tile in board:
         x1 = board.get(tile).tkr_coordinates[0]
@@ -75,7 +77,7 @@ def drawBoard():
         x2 = board.get(tile).tkr_coordinates[2]
         y2 = board.get(tile).tkr_coordinates[3]
 
-        canvas.create_rectangle(x1, y1, x2, y2)
+        canvas.create_rectangle(x1, y1, x2, y2, fill=board.get(tile).color)
 
 
     tkr.mainloop()
