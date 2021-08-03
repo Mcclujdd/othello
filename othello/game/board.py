@@ -73,9 +73,14 @@ def onClick(event):
     tile = canvas.find_closest(event.x, event.y)
 
     current_color = canvas.itemcget(tile, 'fill')
+    if current_color == 'grey':
+        color = 'red'
+    elif current_color == 'red':
+        color = 'blue'
+    else:
+        color = 'grey'
 
-    if current_color == 'grey' or 'blue':
-        modify_color(tile, 'red')
+    modifyColor(tile, color)
 
 
 def drawBoard(board):
@@ -88,6 +93,8 @@ def drawBoard(board):
 
         canvas.create_rectangle(x1, y1, x2, y2, fill=board.get(tile).color)
 
+
+    canvas.bind('<Button-1>', onClick)
 
     tkr.mainloop()
 
